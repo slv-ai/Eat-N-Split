@@ -23,7 +23,10 @@ export default function App(){
   <div className="app">
     <div className="sidebar">
       <FriendsList />
-    </div> 
+      <FormAddFriend />
+      <Button>Add Friend</Button>
+    </div>
+    <FormSplitBill />
   </div>
   );
 }
@@ -46,7 +49,53 @@ const Friend = ({friend}) =>{
     {friend.balance < 0 && <p className="red">You owe {friend.name} {Math.abs(friend.balance)}$</p>}
     {friend.balance > 0 && <p className="green">You owe {friend.name} {Math.abs(friend.balance)}$</p>}
     {friend.balance === 0 && <p>You and {friend.name} are even </p>}
+    <Button>Select</Button>
+    
   </li>
+  )
+}
+
+const Button = ({children}) => {
+  return (
+    <button className="button">{children}</button>
+  )
+
+}
+const FormAddFriend = () => {
+  return (
+    <form className="form-add-friend">
+      <label>👭 Friend name</label>
+      <input type="text"></input>
+
+      <label>🌄 Image url</label>
+      <input type="text"></input>
+      <Button>Add</Button>
+    </form>
+  )
+}
+
+const FormSplitBill = () => {
+  return (
+    <form className="form-split-bill">
+      <h2>Split a Bill with X</h2>
+
+      <label>💰Bill value</label>
+      <input type="text"></input>
+
+      <label> 🧍‍♂️Your expense</label>
+      <input type="text"></input>
+
+      <label>🚶‍♂️ X's expense</label>
+      <input type="text" disabled></input>
+      
+      <label>🤑 Who is paying the bill?</label>
+        <select>
+          <option value="user">You</option>
+          <option value="friend">X</option>
+        </select>
+      <Button> split bill</Button>
+
+    </form>
   )
 }
 

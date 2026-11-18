@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Eat-N-Split - Create React App
+
+![Split Bill App Screenshot](./eat-n-split.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
